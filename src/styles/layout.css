@@ -38,6 +38,7 @@
   background: rgba(35, 36, 45, 0.88);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
+  touch-action: pan-y;
   transform: translate3d(-50%, 0, 0);
   transition:
     min-height 220ms ease,
@@ -94,10 +95,12 @@
 .site-nav {
   display: flex;
   min-width: 0;
+  max-width: 100%;
   align-items: center;
   justify-content: center;
   gap: 4px;
   padding: 0 18px;
+  touch-action: pan-y;
 }
 
 .site-nav a {
@@ -197,11 +200,10 @@ main {
 
   .site-nav {
     grid-column: 1 / -1;
-    justify-content: flex-start;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: clip;
     padding: 0 16px 14px;
-    scrollbar-width: thin;
   }
 
   main {
@@ -243,13 +245,14 @@ main {
   }
 
   .site-nav a {
+    justify-content: center;
     min-height: 34px;
     padding: 0 10px;
     font-size: 13px;
   }
 
   main {
-    margin-top: 190px;
+    margin-top: 228px;
   }
 
   .section-shell,
@@ -292,11 +295,18 @@ main {
   }
 
   .site-nav {
+    gap: 4px 5px;
     padding: 0 10px 10px;
   }
 
+  .site-nav a {
+    min-height: 32px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
   main {
-    margin-top: 180px;
+    margin-top: 224px;
     margin-bottom: 52px;
   }
 
